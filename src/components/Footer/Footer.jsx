@@ -11,16 +11,34 @@ function Footer() {
       <hr />
       <div className="footer">
         <div className="social-links">
-          <img src={Github} alt="" />
-          <img src={Instagram} alt="" />
-          <img src={LinkedIn} alt="" />
+          <a
+            href="https://github.com/Ruslan3571"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Github} alt="" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ruslan-formanchuk/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={Instagram} alt="" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ruslan-formanchuk/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={LinkedIn} alt="" />
+          </a>
         </div>
         <div className="logo-f">
           <img src={Logo} alt="" />
         </div>
-          </div>
-          <div className="blur blur-f-1"></div>
-          <div className="blur blur-f-2"></div>
+      </div>
+      <div className="blur blur-f-1"></div>
+      <div className="blur blur-f-2"></div>
     </div>
   );
 }

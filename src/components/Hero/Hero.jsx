@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from 'components/Header/Header';
 import './Hero.css';
 import hero_image from '../../assets/hero_image.png';
@@ -7,10 +7,21 @@ import Heart from '../../assets/heart.png';
 import Calories from '../../assets/calories.png';
 import { motion } from 'framer-motion';
 import NumberCounter from 'number-counter';
+import Modal from 'react-modal';
 
 const Hero = () => {
   const transition = { type: 'spring', duration: 3 };
   const mobile = window.innerWidth <= 768 ? true : false;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleJoinNowClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="hero" id="home">
@@ -63,12 +74,47 @@ const Hero = () => {
         </div>
 
         <div className="hero-buttons">
-          <buttons className="btn">Get Started</buttons>
+          <buttons className="btn" onClick={handleJoinNowClick}>
+            Get Started
+          </buttons>
           <buttons className="btn">Learn More</buttons>
         </div>
       </div>
       <div className="right-h">
-        <button className="btn">Join Now</button>
+        <button className="btn" onClick={handleJoinNowClick}>
+          Join Now
+        </button>
+
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          contentLabel="Registration Modal"
+          className="Modal"
+          overlayClassName="Overlay"
+        >
+          <h2>Registration Form</h2>
+          <form>
+            <label>
+              Name:
+              <input type="text" name="name" />
+            </label>
+            <br />
+            <label>
+              Email:
+              <input type="email" name="email" />
+            </label>
+            <br />
+            <label>
+              Password:
+              <input type="password" name="password" />
+            </label>
+            <br />
+            <button type="submit">Register</button>
+          </form>
+          <button className="close-button" onClick={closeModal}>
+            x
+          </button>
+        </Modal>
 
         <motion.div
           transition={transition}

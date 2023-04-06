@@ -155,7 +155,7 @@
   background-color: var(--caloryCard);
   border-radius: 5px;
   padding: 1rem;
-  width: fit-content;
+  width: max-content;
   position: absolute;
   top: 32rem;
   right: 28rem;
@@ -184,6 +184,82 @@
   height: 30rem;
   left: 0;
 }
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  width: 30rem;
+  height: 27rem;
+  border-radius: 1rem;
+}
+.Modal > h2 {
+  text-align: center;
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+button[type='submit'] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background-color: #3e8e41;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+
 
 @media screen and (max-width: 768px) {
   .hero {

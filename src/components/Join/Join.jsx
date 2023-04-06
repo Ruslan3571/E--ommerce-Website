@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import './Join.css';
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Join() {
   const form = useRef();
@@ -18,6 +20,7 @@ function Join() {
       .then(
         result => {
           console.log(result.text);
+          toast.success('Success !');
         },
         error => {
           console.log(error.text);
@@ -53,6 +56,7 @@ function Join() {
           />
           <button className="btn btn-j">Join Now</button>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );

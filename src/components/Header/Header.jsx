@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import Logo from '../../assets/logo.png';
 import Bars from '../../assets/bars.png';
 import { Link } from 'react-scroll';
 
 function Header() {
-  const mobile = window.innerWidth <= 768 ? true : false;
   const [menuOpened, setMenuOpened] = useState(false);
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="header">
